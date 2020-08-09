@@ -10,7 +10,7 @@ public class generateName {
 		String[] name;
 		try {
 			String s = null;
-			String cmd="python3 /home/student/PycharmProjects/generateName/main.py "+ countryName+" "+gender;
+			String cmd="python3 /home/student/git/generateNames/generateName/main.py "+ countryName+" "+gender;
 			Process p = Runtime.getRuntime().exec(cmd);	
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			while ((s = in.readLine()) != null) {

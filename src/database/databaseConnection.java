@@ -8,7 +8,7 @@ public class databaseConnection {
 
 	public void insertData(String firstName, String lastName, String countryName, String gender) {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/generateNames?autoReconnect=true&useSSL=false";
+			String dbURL = "jdbc:mysql://localhost:3306/generateNames?autoReconnect=true&useSSL=false&characterEncoding=utf8";
 			String userName = "admin";
 			String password = "123";
 			Connection myConnection = DriverManager.getConnection(dbURL, userName, password);
