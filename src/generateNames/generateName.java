@@ -10,17 +10,20 @@ public class generateName {
 		String[] name;
 		try {
 			String s = null;
-			String cmd="python3 /home/student/git/generateNames/generateName/main.py "+ countryName+" "+gender;
+			String cmd="python3 /home/student/PycharmProjects/generateName/main.py "+ countryName+" "+gender;
+			System.out.println(cmd);
 			Process p = Runtime.getRuntime().exec(cmd);	
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			while ((s = in.readLine()) != null) {
+				System.out.println(s);
 				fullName = s;
 			}
-			System.out.println(fullName);
-			name = fullName.split(" ");
+			name = fullName.split(" ",2);
 			firstName=name[0];
 			lastName=name[1];
-		} catch (Exception e) {
+
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		databaseConnection dc=new databaseConnection();
